@@ -1,0 +1,25 @@
+﻿Method = Strain Engineering v2\6_Induction
+Logged in user = Beckman Coulter
+Started 09/06/2023 14:50:09
+Unit serial number = B8758519K13
+Pod1 head serial number = B8758919L19
+Pod Last validated 02/04/2021 13:01:55
+Pod2 head serial number = None
+Pod Last validated 02/04/2021 13:01:59
+
+09/06/2023 14:50:59,Pod1,Aspirate,TL14,Inducer,,1,26,Custom
+09/06/2023 14:51:12,Pod1,Dispense,TL15,G0000426,,1,26,Custom
+09/06/2023 14:51:43,Pod1,Aspirate,TL14,Inducer,,1,26,Custom
+09/06/2023 14:51:56,Pod1,Dispense,TL16,G0000428,,1,26,Custom
+09/06/2023 14:52:28,Pod1,Aspirate,TL14,Inducer,,1,26,Custom
+09/06/2023 14:52:44,Pod1,Dispense,TL17,G0000460,,1,26,Custom
+09/06/2023 14:53:15,Pod1,Aspirate,TL14,Inducer,,1,26,Custom
+09/06/2023 14:53:29,Pod1,Dispense,TL18,G0000462,,1,26,Custom
+09/06/2023 14:53:59,Pod1,Aspirate,TL14,Inducer,,1,26,Custom
+09/06/2023 14:54:13,Pod1,Dispense,TL19,G0000464,,1,26,Custom
+09/06/2023 14:54:43,Pod1,Aspirate,TL14,Inducer,,1,26,Custom
+09/06/2023 14:54:57,Pod1,Dispense,TL20,G0000468,,1,26,Custom
+09/06/2023 14:55:27,Pod1,Aspirate,TL14,Inducer,,1,26,Custom
+09/06/2023 14:55:41,Pod1,Dispense,TL21,G0000470,,1,26,Custom
+09/06/2023 14:56:13,Pod1,Aspirate,TL14,Inducer,,1,26,Custom
+09/06/2023 14:56:27,Pod1,Dispense,TL22,G0000626,,1,26,Custom

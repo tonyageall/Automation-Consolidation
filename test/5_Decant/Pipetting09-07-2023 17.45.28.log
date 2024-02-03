@@ -1,0 +1,41 @@
+﻿Method = Personal Folders\Kyle\FastFeas\FF5_Decant Plates
+Logged in user = Beckman Coulter
+Started 09/07/2023 17:45:28
+Unit serial number = B8758519K13
+Pod1 head serial number = B8758919L19
+Pod Last validated 02/04/2021 13:01:55
+Pod2 head serial number = None
+Pod Last validated 02/04/2021 13:01:59
+
+09/07/2023 17:45:38,User Pause: Scan barcodes for Name field. 
+Scan "D###" barcode for Plate Barcode field of Insol and Sol plates
+If you forgot to do this step, select Abort.
+09/07/2023 17:45:44,End User Pause
+09/07/2023 17:45:44,User Pause: Peel insol plates.
+09/07/2023 17:45:47,End User Pause
+09/07/2023 17:45:47,User Pause: Use non-filtered tips
+09/07/2023 17:45:49,End User Pause
+09/07/2023 17:46:32,Pod1,Aspirate,TL18,I0000002,D0000002,1,150,Decanting_MC230uL
+09/07/2023 17:46:55,Pod1,Dispense,TL23,S0000002,D0000002,1,155,Decanting_MC230uL
+09/07/2023 17:47:23,Pod1,Aspirate,TL18,I0000002,D0000002,1,150,Decanting_MC230uL
+09/07/2023 17:47:46,Pod1,Dispense,TL23,S0000002,D0000002,1,155,Decanting_MC230uL
+09/07/2023 17:48:14,Pod1,Aspirate,TL18,I0000002,D0000002,1,150,Decanting_MC230uL
+09/07/2023 17:52:27,Pod1,Dispense,TL23,S0000002,D0000002,1,155,Decanting_MC230uL
+09/07/2023 17:52:55,Pod1,Aspirate,TL9,Resuspension Buffer,,1,133.3,Asp/Disp from bottom_MC230uL
+09/07/2023 17:53:04,Pod1,Dispense,TL18,I0000002,D0000002,1,153.3,Asp/Disp from bottom_MC230uL
+09/07/2023 17:53:17,Pod1,Aspirate,TL9,Resuspension Buffer,,1,133.3,Asp/Disp from bottom_MC230uL
+09/07/2023 17:53:25,Pod1,Dispense,TL18,I0000002,D0000002,1,153.3,Asp/Disp from bottom_MC230uL
+09/07/2023 17:53:38,Pod1,Aspirate,TL9,Resuspension Buffer,,1,133.3,Asp/Disp from bottom_MC230uL
+09/07/2023 17:53:47,Pod1,Dispense,TL18,I0000002,D0000002,1,153.3,Asp/Disp from bottom_MC230uL
+09/07/2023 17:54:30,Pod1,Aspirate,TL19,I0000010,D0000010,1,150,Decanting_MC230uL
+09/07/2023 17:54:53,Pod1,Dispense,TL24,S0000010,D0000010,1,155,Decanting_MC230uL
+09/07/2023 17:55:21,Pod1,Aspirate,TL19,I0000010,D0000010,1,150,Decanting_MC230uL
+09/07/2023 17:55:44,Pod1,Dispense,TL24,S0000010,D0000010,1,155,Decanting_MC230uL
+09/07/2023 17:56:12,Pod1,Aspirate,TL19,I0000010,D0000010,1,150,Decanting_MC230uL
+09/07/2023 17:56:34,Pod1,Dispense,TL24,S0000010,D0000010,1,155,Decanting_MC230uL
+09/07/2023 17:57:03,Pod1,Aspirate,TL9,Resuspension Buffer,,1,133.3,Asp/Disp from bottom_MC230uL
+09/07/2023 17:57:11,Pod1,Dispense,TL19,I0000010,D0000010,1,153.3,Asp/Disp from bottom_MC230uL
+09/07/2023 17:57:25,Pod1,Aspirate,TL9,Resuspension Buffer,,1,133.3,Asp/Disp from bottom_MC230uL
+09/07/2023 17:57:33,Pod1,Dispense,TL19,I0000010,D0000010,1,153.3,Asp/Disp from bottom_MC230uL
+09/07/2023 17:57:46,Pod1,Aspirate,TL9,Resuspension Buffer,,1,133.3,Asp/Disp from bottom_MC230uL
+09/07/2023 17:57:55,Pod1,Dispense,TL19,I0000010,D0000010,1,153.3,Asp/Disp from bottom_MC230uL

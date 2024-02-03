@@ -1,0 +1,51 @@
+﻿Method = Personal Folders\Kyle\FastFeas\FF3_Harvest
+Logged in user = Beckman Coulter
+Started 09/07/2023 13:15:04
+Unit serial number = B8758519K13
+Pod1 head serial number = B8758919L19
+Pod Last validated 02/04/2021 13:01:55
+Pod2 head serial number = None
+Pod Last validated 02/04/2021 13:01:59
+
+09/07/2023 13:15:19,User Pause: Scan barcode for plate name. If you forgot to do this step, select Abort.
+09/07/2023 13:15:25,End User Pause
+09/07/2023 13:15:56,Pod1,Aspirate,TL27,Buffer,,1,266,Custom
+09/07/2023 13:16:05,Pod1,Dispense,TL18,D0000002,,1,266,Custom
+09/07/2023 13:16:21,Pod1,Aspirate,TL27,Buffer,,1,266,Custom
+09/07/2023 13:16:30,Pod1,Dispense,TL19,D0000004,,1,266,Custom
+09/07/2023 13:16:46,Pod1,Aspirate,TL27,Buffer,,1,266,Custom
+09/07/2023 13:16:55,Pod1,Dispense,TL20,D0000006,,1,266,Custom
+09/07/2023 13:17:13,Pod1,Aspirate,TL27,Buffer,,1,266,Custom
+09/07/2023 13:17:22,Pod1,Dispense,TL21,D0000008,,1,266,Custom
+09/07/2023 13:17:38,Pod1,Aspirate,TL27,Buffer,,1,266,Custom
+09/07/2023 13:17:46,Pod1,Dispense,TL22,D0000010,,1,266,Custom
+09/07/2023 13:18:02,Pod1,Aspirate,TL27,Buffer,,1,266,Custom
+09/07/2023 13:18:10,Pod1,Dispense,TL23,D0000012,,1,266,Custom
+09/07/2023 13:18:49,Pod1,Aspirate,TL27,Buffer,,1,266,Custom
+09/07/2023 13:18:58,Pod1,Dispense,TL24,D0000014,,1,266,Custom
+09/07/2023 13:19:13,Pod1,Aspirate,TL27,Buffer,,1,266,Custom
+09/07/2023 13:19:22,Pod1,Dispense,TL25,D0000016,,1,266,Custom
+09/07/2023 13:20:00,Pod1,Mix,TL10,G0000426,,1,100,Custom
+09/07/2023 13:20:13,Pod1,Aspirate,TL10,G0000426,,1,134,Custom
+09/07/2023 13:20:39,Pod1,Dispense,TL18,D0000002,,1,134,Custom
+09/07/2023 13:21:17,Pod1,Mix,TL11,G0000428,,1,100,Custom
+09/07/2023 13:21:30,Pod1,Aspirate,TL11,G0000428,,1,134,Custom
+09/07/2023 13:21:56,Pod1,Dispense,TL19,D0000004,,1,134,Custom
+09/07/2023 13:22:57,Pod1,Mix,TL12,G0000460,,1,100,Custom
+09/07/2023 13:23:10,Pod1,Aspirate,TL12,G0000460,,1,134,Custom
+09/07/2023 13:23:36,Pod1,Dispense,TL20,D0000006,,1,134,Custom
+09/07/2023 13:24:15,Pod1,Mix,TL13,G0000462,,1,100,Custom
+09/07/2023 13:24:28,Pod1,Aspirate,TL13,G0000462,,1,134,Custom
+09/07/2023 13:24:54,Pod1,Dispense,TL21,D0000008,,1,134,Custom
+09/07/2023 13:25:33,Pod1,Mix,TL14,G0000464,,1,100,Custom
+09/07/2023 13:25:47,Pod1,Aspirate,TL14,G0000464,,1,134,Custom
+09/07/2023 13:26:13,Pod1,Dispense,TL22,D0000010,,1,134,Custom
+09/07/2023 13:27:55,Pod1,Mix,TL15,G0000468,,1,100,Custom
+09/07/2023 13:28:08,Pod1,Aspirate,TL15,G0000468,,1,134,Custom
+09/07/2023 13:28:32,Pod1,Dispense,TL23,D0000012,,1,134,Custom
+09/07/2023 13:29:10,Pod1,Mix,TL16,G0000470,,1,100,Custom
+09/07/2023 13:29:23,Pod1,Aspirate,TL16,G0000470,,1,134,Custom
+09/07/2023 13:29:47,Pod1,Dispense,TL24,D0000014,,1,134,Custom
+09/07/2023 13:30:27,Pod1,Mix,TL17,G0000626,,1,100,Custom
+09/07/2023 13:30:40,Pod1,Aspirate,TL17,G0000626,,1,134,Custom
+09/07/2023 13:31:04,Pod1,Dispense,TL25,D0000016,,1,134,Custom
