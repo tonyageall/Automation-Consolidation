@@ -16,48 +16,49 @@ class GetDilutionPlates:
     def getDplates(self):
         self.Dplates = self.Input.Dilution_Plate.unique()
 
-    def getInsolPlates(self):
-        self.Dplates = self.Input.Dilution_Plate.unique()
-        for file in os.listdir(self.Dir):
-            if file.endswith('.log'):
-                PATH = os.path.join(self.Dir, file)
-                f1 = open(PATH, 'r').readlines()
-                DILUTIONPLATE = [item for item in f1 if re.search(r'D[0-9]{1,9}', item)]
-                for item in DILUTIONPLATE:
-                    INSOL = re.search(r'I[0-9]{1,9}', item)
-                    DILUTION = re.search(r'D[0-9]{1,9}', item)
-                    
-                    if INSOL and DILUTION is not None:
-                        INSOL = INSOL.group()
-                        DILUTION = DILUTION.group()
-                        self.insol.update({DILUTION: INSOL})
-                    else:
-                        INSOL = 'No INSOL Found'
-                        DILUTION = DILUTION.group()
-                        self.sol.update({DILUTION: INSOL})
+    
+    def getCGEPlates(self):
 
-                    
+        SOL = []
+        INSOL = []
+        SOLPLATES = {}
+        INSOLPLATES = {}
 
-    def getSolPlates(self):
-        self.Dplates = self.Input.Dilution_Plate.unique()
         for file in os.listdir(self.Dir):
-            if file.endswith('.log'):
-                PATH = os.path.join(self.Dir, file)
-                f1 = open(PATH, 'r').readlines()
-                DILUTIONPLATE = [item for item in f1 if re.search(r'D[0-9]{1,9}', item)]
-                for item in DILUTIONPLATE:
-                    SOL = re.search(r'S[0-9]{1,9}', item)
-                    DILUTION = re.search(r'D[0-9]{1,9}', item)
-                    
-                    if SOL and DILUTION is not None:
-                        SOL = SOL.group()
-                        DILUTION = DILUTION.group()
-                        self.sol.update({DILUTION: SOL})
-                    else:
-                        SOL = 'No SOL Found'
-                        DILUTION = DILUTION.group()
-                        self.sol.update({DILUTION: SOL})
-                    
+                    if file.endswith('.log'):
+                        PATH = os.path.join(self.Dir, file)
+                        f1 = open(PATH, 'r').readlines()
+                        DILUTIONPLATE = [item for item in f1 if re.search(r'D[0-9]{1,9}', item)]
+                        for item in DILUTIONPLATE:
+                                META = item.split(',')
+                                DIL = META[5]
+                                PLA = META[4]
+                                TIME = datetime.strptime(META[0], '%m/%d/%Y %H:%M:%S')
+                                if PLA not in (SOL and INSOL):
+                                    if re.search(r'S', PLA) != None:
+                                            SOL.append(PLA)
+                                            try:
+                                                if SOLPLATES.get(DIL) != PLA:
+                                                    SOLPLATES.update({DIL:PLA})
+                                                else:
+                                                    continue
+                                            except:
+                                                SOLPLATES.update({DIL:PLA})
+                                    
+                                    if re.search(r'I', PLA) != None:
+                                            INSOL.append(PLA)
+                                            try:
+                                                if INSOLPLATES.get(DIL) != PLA:
+                                                    INSOLPLATES.update({DIL:PLA})
+                                                else:
+                                                    continue
+                                            except:
+                                                INSOLPLATES.update({DIL:PLA})
+                                else:
+                                    continue
+        self.sol = SOLPLATES
+        self.insol = INSOLPLATES
+                        
 #-- not sure if these methods should be called like this but this seems useful and a little more modular
 
     def Analyzed_Plates_Sol(self, Input):
