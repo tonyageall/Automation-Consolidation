@@ -117,6 +117,46 @@ class ReducedNonReducedPlateConverter:
             return 'Not Analyzed'
         else:
             return self.INSOL_REDUCED_PLATES.get(Input)
+        
+
+#-- create a class to convert reduced and non-reduced plates to associated CGE plates with values
+class GetCGEdata:
+    def __init__(self, DATADIR):
+        self.DATADIR = DATADIR
+        self.PLATE_DATA = []
+        self.reducedPDATA = {}
+
+        for file in os.listdir(self.DATADIR):
+            if file.endswith('.csv'):
+                PATH = os.path.join(self.DATADIR, file)
+                f1 = pd.read_csv(PATH)
+                f1['Reduced_Plate'] = f1['Plate Name'].apply(lambda x: re.search(r'[A-Z]{1,9}[0-9]{1,9}', x).group(0))
+                for row, index in f1.iterrows():
+                    key = index['Reduced_Plate']
+                    sub_key = index['Sample Name']
+                    value = (index['Conc. (ng/ul)'], file)
+                    # Check if the outer key exists in the nested_dict
+                    if key in self.reducedPDATA:
+                        self.reducedPDATA[key][sub_key] = value
+                    else:
+                        self.reducedPDATA[key] = {sub_key: value}
+                self.PLATE_DATA.append(f1)
+
+        self.PLATE_DATA = pd.concat(self.PLATE_DATA, axis=0, ignore_index=True)
+
+    def get_peak_data(self, plate, well):
+        try:
+            return self.reducedPDATA[plate][well][0]
+        except KeyError:
+            return ("None")
+        
+    def get_peak_log(self, plate, well):
+        try:
+            return self.reducedPDATA[plate][well][1]
+        except KeyError:
+            return ("None")
+
+
 
 
 
