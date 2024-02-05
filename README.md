@@ -11,6 +11,11 @@ This packagage describes how to consolidate data from barcoded labratory plates 
 
 ## Installation
 
-Provide installation instructions here. You can include steps for setting up a virtual environment, installing dependencies, and running your project.
+This package was created in a conda envrionment on M3 silicon. In case PyTorch dependecy clashes occur. Please use the minimal requirments.txt and pip for install. PyTorch and facebook ESM and vcMSA used are used for protein engineering but are not necessary to run any of the minimal python install.
+
+## Usage
+
+
+
 
 
