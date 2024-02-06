@@ -82,3 +82,6 @@ class addPlatesToDB:
             with driver.session() as session:
                 session.run(query)
 
+class generate_barcodes:
+    def __init__(self):
+
