@@ -14,7 +14,7 @@ class getPlateDB:
 
     def get_plates_property(self, node_id, plate_type, uri, username, password):
         query = (
-            f"MATCH (node:{node_id} {{PlateTYPE: '{plate_type}'}}) "
+            f"MATCH (node:{node_id} {{Plates: '{plate_type}'}}) "
             "RETURN node.Plates AS platesProperty"
         )
 
@@ -58,3 +58,21 @@ class generate_random_numbers_extensions:
                 plates_generated += 1  # Increment the counter
 
         return used_numbers
+    
+#--add to nodes in the database
+class addPlatesToDB:
+    def __init__(self, node_id, plate_type, PlateCatalogue):
+        self.node_id = node_id  # Use a private variable to store node_id
+        self.plate_type = plate_type  # Use a private variable to store plate_type
+        self.PlateCatalogue = PlateCatalogue  # current list of plates
+
+    def replace_list_property(self, uri, username, password):
+        query = (
+            f"MATCH(p:{self.node_id}) "
+            f"SET p.{self.plate_type} = {self.PlateCatalogue}"
+        )
+
+        with GraphDatabase.driver(uri, auth=(username, password)) as driver:
+            with driver.session() as session:
+                session.run(query)
+

@@ -78,6 +78,9 @@ class ReducedNonReducedPlateConverter:
     def __init__(self, DIR):
         self.SOL_REDUCED_PLATES = {}
         self.INSOL_REDUCED_PLATES = {}
+        self.SOL = []
+        self.INSOL = []
+        self.CGEplates = []
         self.PLATES = []
         self.DIR = DIR
 
@@ -99,10 +102,14 @@ class ReducedNonReducedPlateConverter:
                     sol = re.search(r'S[0-9]{1,9}', self.PLATES[i]).group()
                     red = re.search('RED[0-9]{1,9}', self.PLATES[i+1]).group()
                     self.SOL_REDUCED_PLATES.update({sol: red})
+                    self.SOL.append(sol)
+                    self.CGEplates.append(red)
                 if re.search(r'I[0-9]{1,9}', self.PLATES[i]) is not None:
                     isol = re.search(r'I[0-9]{1,9}', self.PLATES[i]).group()
                     red = re.search('RED[0-9]{1,9}', self.PLATES[i+1]).group()
                     self.INSOL_REDUCED_PLATES.update({isol: red})
+                    self.INSOL.append(isol)
+                    self.CGEplates.append(red)
             except IndexError:
                 break
 
