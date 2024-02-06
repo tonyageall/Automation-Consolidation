@@ -20,7 +20,7 @@ This package was created in a conda envrionment on M3 silicon. In case PyTorch d
 
 The plate database are independent nodes with the list of ID's stored as lists:
 
-![Plate database schema] (./PlateDBschema.png)
+![Plate database schema](./PlateDBschema.png)
 
 
 
