@@ -82,6 +82,22 @@ class addPlatesToDB:
             with driver.session() as session:
                 session.run(query)
 
-class generate_barcodes:
-    def __init__(self):
+
+class generate_wells:
+    def __init__(self, plateType, PlateBarCode, wells):
+        self.PlateBarCode = PlateBarCode
+        self.wells = wells
+        self.plateType = plateType
+
+    def add_wells(self, uri, username, password):
+        query = (
+            f"MATCH (node:{self.plateType}) WHERE node.PlateBarCode = $PlateBarCode "
+            "SET node.Wells = $wells"
+        )
+        parameters = {"PlateBarCode": self.PlateBarCode, "wells": self.wells}
+        
+        with GraphDatabase.driver(uri, auth=(username, password)) as driver:
+            with driver.session() as session:
+                session.run(query, parameters)
+
 

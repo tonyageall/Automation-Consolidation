@@ -91,3 +91,72 @@ def create_gene_to_projects(tx, project, GeneID, GeneSeq, protID, MW_Leader, pI,
            project=project, GeneID=GeneID, GeneSeq=GeneSeq, protID=protID, MW_noLeader=MW_noLeader, pI_noLeader=pI_noLeader,
            OD_noLeader=OD_noLeader, netCharge_noLeader=netCharge_noLeader, MW_Leader=MW_Leader, pI=pI,
            OD=OD, netCharge=netCharge, MWseq=MWseq, MWnLseq=MWnLseq)
+
+class PlateUnwindToDB:
+    def __init__(self, plateType, uri, username, password):
+        self.plateType = plateType
+        self.uri = uri
+        self.username = username
+        self.password = password
+        self.plate = []
+
+    def unwind(self):
+        query = (
+            f"MATCH (n) WHERE (n.PlateType = '{self.plateType}') "
+            f"UNWIND (n.Plates) AS PLATE "
+            f"CREATE (P:{self.plateType} {{PlateBarCode: PLATE, Wells: []}}) "
+            f"WITH PLATE "
+            f"RETURN PLATE"
+        )
+
+        with GraphDatabase.driver(self.uri, auth=(self.username, self.password)) as driver:
+            with driver.session() as session:
+                result = session.run(query)
+                for record in result:
+                    self.plate.append(record['PLATE'])
+        return self  # Return self to enable method chaining
+
+    def connect_to_project(self, ECHOplatesUSED, project):
+        query = (
+            f"MATCH (n:Project {{Project: '{project}'}}) "
+            f"MATCH (p:EchoPlate) WHERE '{ECHOplatesUSED}' IN p.Plates "
+            "MERGE (n)-[:Contains]->(p)"
+        )
+
+        with GraphDatabase.driver(self.uri, auth=(self.username, self.password)) as driver:
+            with driver.session() as session:
+                session.run(query)
+        return self
+    
+    def connect_to_plate(self, connection, connectionID):
+        query = (
+        f"MATCH (n:{self.plateType} {{PlateBarCode: $plate}}) "
+        f"MATCH (p:{connection}) WHERE '{connectionID}' IN p.Plates "
+        "MERGE (p)-[:Contains]->(n)"
+    )
+
+        with GraphDatabase.driver(self.uri, auth=(self.username, self.password)) as driver:
+            with driver.session() as session:
+                for plate in self.plate:
+                    session.run(query, plate=plate)
+        return self  # Return self to enable method chaining
+    
+    def connect_to_plateBarcode(self, connection, connectionID):
+        query = (
+        f"MATCH (n:{self.plateType} {{PlateBarCode: $plate}}) "
+        f"MATCH (p:{connection}) WHERE '{connectionID}' IN p.PlateBarCode "
+        "MERGE (p)-[:Contains]->(n)"
+    )
+
+        with GraphDatabase.driver(self.uri, auth=(self.username, self.password)) as driver:
+            with driver.session() as session:
+                for plate in self.plate:
+                    session.run(query, plate=plate)
+        return self  # Return self to enable method chaining
+
+
+
+
+    
+
+       
