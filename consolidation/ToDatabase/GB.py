@@ -153,6 +153,28 @@ class PlateUnwindToDB:
                 for plate in self.plate:
                     session.run(query, plate=plate)
         return self  # Return self to enable method chaining
+    
+class unwind_wells:
+        def __init__(self, plateType, uri, username, password):
+            self.plateType = plateType
+            self.uri = uri
+            self.username = username
+            self.password = password
+
+        def wells(self, plateBarCode):
+            query = (
+                f"MATCH (plate:{self.plateType}) "
+                f"WHERE plate.PlateBarCode = $plateBarCode "
+                f"UNWIND plate.Wells AS well "
+                f"CREATE (WELL {{WellID:well}})-[:Wells_OF]->(plate)"
+            )
+
+            with GraphDatabase.driver(self.uri, auth=(self.username, self.password)) as driver:
+                with driver.session() as session:
+                    session.run(query, plateBarCode=plateBarCode)
+            return self
+
+
 
 
 
