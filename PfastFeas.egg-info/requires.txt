@@ -4,4 +4,3 @@ matplotlib
 seaborn
 neo4j
 datetime
-biopython
